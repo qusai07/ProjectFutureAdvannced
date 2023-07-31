@@ -1,0 +1,12 @@
+﻿:root {
+    --colorWhite: white;
+    --colorbg: #0d6efd;
+    --colorbg2: #0750ba;
+    --gray: #E0E0E0;
+}
+.headSection h6{
+    color:var(--colorbg);
+}
+.btnWidth{
+    width:100px;
+}

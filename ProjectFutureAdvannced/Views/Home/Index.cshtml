@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@* start landing  *@
+<div class="Landing navbar-dark bg-primary">
+    <div class="container">
+        <div class="splide" style="width:100%;" id="landingsplide" role="group" aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide d-flex justify-content-center align-items-center">
+                        <div class="row slideLanding">
+                            <div class=" slideInfo col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center flex-column">
+                                <h1 class="fw-bold headLanding">WELCOME TO ASHTURI</h1>
+                                <p class="txtLanding">Welcome to our premier car dealership Ashturi! Discover an extensive collection of high-quality, pre-owned cars that are sure to meet your needs and exceed your expectations. With a wide range of makes and models, we offer a diverse selection of vehicles to suit every lifestyle and budget.</p>
+                                <a class="btn BtnCustom1 btnWidth">Shop Now</a>
+                            </div>
+                            <div class="slideImg col-lg-6 col-md-12 col-sm-12">
+                                <img src="~/ImagePage/landing1.png" />
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide d-flex justify-content-center align-items-center">
+                        <div class="row slideLanding">
+                            <div class=" slideInfo col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center flex-column">
+                                <h1 class="fw-bold headLanding">CATEGORY OF ASHTURI</h1>
+                                <p class="txtLanding">Our team of knowledgeable and friendly professionals is dedicated to providing you with a seamless and enjoyable car buying experience. Browse our inventory, find the car of your dreams, and let us help you drive away with confidence. Your journey to owning the perfect car starts here.</p>
+                                <a class="btn BtnCustom1 btnWidth">View Category</a>
+                            </div>
+                            <div class="slideImg col-lg-6 col-md-12 col-sm-12">
+                                <img src="~/ImagePage/landing2.png" />
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+@* end landing  *@
+
+
+@* Start Category *@
+<div class="Category pt-5 pb-5">
+    <div class="container">
+        <div class="headSection d-flex justify-content-center align-items-center flex-column pt-3 pb-2">
+            <h6 class="fw-bold">CATEGORY</h6>
+            <h2 class="headP">List Of Vehicle</h2>
+        </div>
+        <div class="list-groups d-flex justify-content-center align-items-center pt-3 pb-5 fw-bold">
+            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                All
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Car</a>
+            <a href="#" class="list-group-item list-group-item-action">Van</a>
+            <a href="#" class="list-group-item list-group-item-action">Truck</a>
+            <a href="#" class="list-group-item list-group-item-action">Motor</a>
+        </div>
+        <div class="listProduct pt-3">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm p-3">
+                        <div class="imgCategory d-flex justify-content-center align-items-center">
+                            <img src="~/ImagePage/landing1.png" style="width:80%;height:300px" alt="Alternate Text" />
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text fw-bold">Car Name</p>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">$0.00</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary btnWidth">Details</button>
+                                    <button type="button" class="btn btn-sm btn-outline-primary btnWidth">Buy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@* end Category *@

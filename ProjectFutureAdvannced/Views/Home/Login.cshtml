@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLoginSignUp.cshtml";
+}
+<div class="container">
+    <div class="title">Login</div>
+    <div class="content">
+        <form action="post">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Username</span>
+                    <input type="text" placeholder="Enter your username" required>
+                </div>
+                <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="text" placeholder="Enter your password" required>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Login">
+            </div>
+            <div class="button">
+                <input type="submit" value="Google">
+            </div><div class="button">
+                <input type="submit" value="Facebook">
+            </div>
+        </form>
+    </div>
+</div>
