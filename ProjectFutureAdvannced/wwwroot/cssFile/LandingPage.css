@@ -4,28 +4,38 @@
     --colorbg2: #0750ba;
     --gray: #E0E0E0;
 }
-body{
-    height:10000px;
-}
 .Landing {
     padding: 0 20px;
     margin-top:76px;
-    height: 88vh;
+    height: 89vh;
 }
-.splide {
-    height: 88vh;
-}
-.splide__track {
-    height: 100%;
-}
+    .Landing .splide {
+        height: 88vh;
+    }
+ .splide__track {
+        height: 100%;
+    }
 .BtnCustom1 {
     background: var(--colorWhite);
-    border: 1px solid var(--colorWhite);
+    border: 2px solid var(--colorWhite);
     color:var(--colorbg);
     transition:0.5s;
+    font-weight:bold;
 }
     .BtnCustom1:hover {
         background-color: transparent;
+        color: var(--colorWhite);
+    }
+.BtnCustom3 {
+    background: var(--colorWhite);
+    border: 2px solid var(--colorbg);
+    color: var(--colorbg);
+    transition: 0.5s;
+    font-weight: bold;
+}
+
+    .BtnCustom3:hover {
+        background-color: var(--colorbg);
         color: var(--colorWhite);
     }
 .slideImg img{
@@ -48,10 +58,24 @@ body{
 }
 .slideImg {
     flex: 0 0 auto;
-display:flex;
-justify-content:center;
-align-items:center;
-} 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: imgLanding 4s ease-in-out infinite;
+}
+@keyframes imgLanding {
+    0% {
+        transform: translate3d(0,-15px,0);
+    }
+
+    50% {
+        transform: translate3d(0,15px,0);
+    }
+
+    100% {
+        transform: translate3d(0,-15px,0);
+    }
+}
 @media (min-width:992px) {
     .slideImg {
         flex: 0 0 auto;

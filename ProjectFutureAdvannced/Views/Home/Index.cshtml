@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ProjectFutureAdvannced.ViewModels.ListOfInfo
+@{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -10,25 +11,24 @@
                 <ul class="splide__list">
                     <li class="splide__slide d-flex justify-content-center align-items-center">
                         <div class="row slideLanding">
-                            <div class=" slideInfo col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center flex-column">
+                            <div class=" slideInfo col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center flex-column pb-4">
                                 <h1 class="fw-bold headLanding">WELCOME TO ASHTURI</h1>
-                                <p class="txtLanding">Welcome to our premier car dealership Ashturi! Discover an extensive collection of high-quality, pre-owned cars that are sure to meet your needs and exceed your expectations. With a wide range of makes and models, we offer a diverse selection of vehicles to suit every lifestyle and budget.</p>
-                                <a class="btn BtnCustom1 btnWidth">Shop Now</a>
+                                <p class="fsFooter"> Welcome to Ashturi, the leading agency across the board! Discover a wide range of quality products that are sure to meet your needs and exceed your expectations. With a wide range of makes and models, we offer a variety of products to suit every lifestyle and budget. </p>
+                                <a class="btn BtnCustom1 Btn">Shop Now</a>
                             </div>
-                            <div class="slideImg col-lg-6 col-md-12 col-sm-12">
-                                <img src="~/ImagePage/landing1.png" />
+                            <div class="imgAnimation slideImg col-lg-6 col-md-12 col-sm-12">
+                                <img src="~/ImagePage/ASHTURI.jpg" />
                             </div>
                         </div>
                     </li>
                     <li class="splide__slide d-flex justify-content-center align-items-center">
                         <div class="row slideLanding">
-                            <div class=" slideInfo col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center flex-column">
+                            <div class="slideInfo col-lg-6 col-md-12 col-sm-12 d-flex justify-content-center flex-column">
                                 <h1 class="fw-bold headLanding">CATEGORY OF ASHTURI</h1>
-                                <p class="txtLanding">Our team of knowledgeable and friendly professionals is dedicated to providing you with a seamless and enjoyable car buying experience. Browse our inventory, find the car of your dreams, and let us help you drive away with confidence. Your journey to owning the perfect car starts here.</p>
-                                <a class="btn BtnCustom1 btnWidth">View Category</a>
+                                <p class="txtLanding"> Our team of knowledgeable and friendly professionals is dedicated to providing you with a smooth and enjoyable buying experience for our products. Browse our site and enjoy the perfect experience. </p>                                <a class="btn BtnCustom1 Btn">View Products</a>
                             </div>
-                            <div class="slideImg col-lg-6 col-md-12 col-sm-12">
-                                <img src="~/ImagePage/landing2.png" />
+                            <div class="imgAnimation slideImg col-lg-6 col-md-12 col-sm-12">
+                                <img src="~/ImagePage/ASHTURI.jpg" />
                             </div>
                         </div>
                     </li>
@@ -40,32 +40,177 @@
 @* end landing  *@
 
 
-@* Start Category *@
-<div class="Category pt-5 pb-5">
+<!-- Start Category-->
+<div class="categorys">
     <div class="container">
-        <div class="headSection d-flex justify-content-center align-items-center flex-column pt-3 pb-2">
-            <h6 class="fw-bold">CATEGORY</h6>
-            <h2 class="headP">List Of Vehicle</h2>
+        <div class="headSection d-flex justify-content-center align-items-center flex-column pt-5 pb-5">
+            <h4 class="fw-bold headP">Categories</h4>
         </div>
-        <div class="list-groups d-flex justify-content-center align-items-center pt-3 pb-5 fw-bold">
-            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                All
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">Car</a>
-            <a href="#" class="list-group-item list-group-item-action">Van</a>
-            <a href="#" class="list-group-item list-group-item-action">Truck</a>
-            <a href="#" class="list-group-item list-group-item-action">Motor</a>
+        <div class="row categorysDiv pb-3">
+            @{
+                int count = 0;
+                foreach (var Category in Model.categories)
+                    {
+                    if (count < 12)
+                        {
+                        var img = "/CategoryImage/" + Category.CategoryImg;
+                        <a asp-action="Store" asp-controller="Home" asp-route-id="@Category.Name" class="categoryInfo col-lg-2 col-md-3 col-sm-6 d-flex justify-content-center align-items-center flex-column">
+                            <div class="CategoryImage">
+                                <img src="@img" alt="Alternate Text" style="width:50px;height:50px" />
+                            </div>
+                            <h5 class="CategoryName text-muted pt-2">@Category.Name.ToString().Replace("_", " ")</h5>
+                        </a>
+                        count++;
+                        }
+                    }
+            }
         </div>
+        <div class="d-flex CategoriesBtn align-items-center gap-4 mb-5">
+            <a class="btn BtnCustom3 Btn">More Categories <i class="fa-solid fa-caret-right"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Grid-->
+<section class="page-section bg-light" id="portfolio">
+    <div class="container">
+        <div class="headSection d-flex justify-content-center align-items-center flex-column pt-5 pb-5">
+            <h4 class="fw-bold headP">List Of Shoper</h4>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 1-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Adidas</div>
+                        <div class="portfolio-caption-subheading text-muted"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 2-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/2.jpg" alt="..." />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Apple</div>
+                        <div class="portfolio-caption-subheading text-muted"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 3-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/3.jpg" alt="..." />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Microsft</div>
+                        <div class="portfolio-caption-subheading text-muted"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                <!-- Portfolio item 4-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/4.jpg" alt="..." />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Bmw</div>
+                        <div class="portfolio-caption-subheading text-muted"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                <!-- Portfolio item 5-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/5.jpg" alt="..." />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Ikea</div>
+                        <div class="portfolio-caption-subheading text-muted"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <!-- Portfolio item 6-->
+                <div class="portfolio-item">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/6.jpg" alt="..." />
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Baby2Baby</div>
+                        <div class="portfolio-caption-subheading text-muted"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@* Start Products *@
+<div class="Products pt-5 pb-5">
+    <div class="container">
+        <div class="headSection d-flex justify-content-center align-items-center flex-column pt-5 pb-5">
+            <h4 class="fw-bold headP">List Of Product</h4>
+        </div>
+        <div class="categorylist  d-flex justify-content-between  gap-4">
+            <div class="d-flex justify-content-start align-items-center gap-4">
+                <div class="d-flex justify-content-start align-items-center  gap-4">
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">All</a></li>
+                            <li><hr class="dropdown-divider" style="height:1px"></li>
+                            @foreach (var vehicle in Enum.GetValues(typeof(ProjectFutureAdvannced.Models.Enums.Categorys)))
+                                {
+                                <li><a class="dropdown-item" href="#">@vehicle</a></li>
+                                }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end align-items-center gap-4">
+                <a class="btn BtnCustom3 Btn">Add Product <i class="fa-solid fa-caret-right"></i></a>
+            </div>
+        </div>
+
         <div class="listProduct pt-3">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
                 <div class="col">
-                    <div class="card shadow-sm p-3">
-                        <div class="imgCategory d-flex justify-content-center align-items-center">
-                            <img src="~/ImagePage/landing1.png" style="width:80%;height:300px" alt="Alternate Text" />
+                    <div class="card shadow-sm">
+                        <div class="imgProducts d-flex justify-content-center align-items-center">
+                            <img src="~/ImagePage/landing1.png" alt="Alternate Text" />
                         </div>
                         <div class="card-body">
-                            <p class="card-text fw-bold">Car Name</p>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text fs-5 fw-bold">Car Name</p>
+                            <p class="card-text fs-6 text-muted">Auther Name</p>
+                            <p class="card-text fsText">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <p class="card-text">$0.00</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
@@ -76,12 +221,80 @@
                         </div>
                     </div>
                 </div>
-
-
+                <div class="col">
+                    <div class="card shadow-sm ">
+                        <div class="imgProducts d-flex justify-content-center align-items-center ">
+                            <img src="~/ImagePage/landing1.png" alt="Alternate Text" />
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text fs-5 fw-bold">Car Name</p>
+                            <p class="card-text fs-6 text-muted">Auther Name</p>
+                            <p class="card-text fsText">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">$0.00</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary btnWidth">Details</button>
+                                    <button type="button" class="btn btn-sm btn-outline-primary btnWidth">Buy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="imgProducts d-flex justify-content-center align-items-center">
+                            <img src="~/ImagePage/landing1.png" alt="Alternate Text" />
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text fs-5 fw-bold">Car Name</p>
+                            <p class="card-text fs-6 text-muted">Auther Name</p>
+                            <p class="card-text fsText">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text">$0.00</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary btnWidth">Details</button>
+                                    <button type="button" class="btn btn-sm btn-outline-primary btnWidth">Buy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
     </div>
 </div>
 
-@* end Category *@
+@* end Products *@
+
+<!-- end Category-->
+<!-- start Services-->
+<div class="Service1 pt-5 pb-5">
+    <div class="container">
+        <div class="Service11 row">
+            <div class="ServiceInfo col-lg-4 col-md-4 col-sm-12">
+                <h1 class="fw-bold">Sell Vehicles</h1>
+                <p>Cash-in an instant offer from a local dealer, or create a free listing to sell it yourself on Ashtari.com. It’s never been easier to sell your car, your way.</p>
+                <a class="btn BtnCustom2 Btn">Read More</a>
+            </div>
+            <div class="imgAnimation imgService col-lg-8 col-md-8 col-sm-12">
+                <img src="~/ImagePage/VehicleBuy.png" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Service2 pt-5 pb-5">
+    <div class="container">
+        <div class="Service11 row">
+            <div class="imgAnimation imgService col-lg-8 col-md-8 col-sm-12">
+                <img src="~/ImagePage/642592df0bb1a756556043_prev_ui.png" />
+            </div>
+            <div class="ServiceInfo col-lg-4 col-md-4 col-sm-12">
+                <h1 class="fw-bold">Buying Vehicles</h1>
+                <p>Cash-in an instant offer from a local dealer, or create a free listing to sell it yourself on Ashtari.com. It’s never been easier to sell your car, your way.</p>
+                <a class="btn BtnCustom1 Btn">Read More</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end Services-->

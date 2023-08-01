@@ -1,44 +1,49 @@
 ﻿@{
-    ViewBag.Title = "Sign Up";
+    ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_LayoutLoginSignUp.cshtml";
 }
-<div class="container">
-    <div class="title">Create Account</div>
-    <div class="content">
-        <form action="#">
-            <div class="user-details">
-                <div class="input-box">
-                    <span class="details">Full Name</span>
-                    <input type="text" placeholder="Enter your name" required>
+<div class="signup">
+    <div class="container">
+        <form class="containerS">
+            <div class="title fw-bold pb-4">Sign Up</div>
+            <div class="inputs d-flex justify-content-center align-items-center gap-4">
+                <div class="
+                 mb-1">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control">
                 </div>
-                <div class="input-box">
-                    <span class="details">Username</span>
-                    <input type="text" placeholder="Enter your username" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Email</span>
-                    <input type="text" placeholder="Enter your email" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Phone Number</span>
-                    <input type="text" placeholder="Enter your number" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Password</span>
-                    <input type="text" placeholder="Enter your password" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">Confirm Password</span>
-                    <input type="text" placeholder="Confirm your password" required>
+                <div class="mb-1">
+                    <label class="form-label">User Name</label>
+                    <input type="text" class="form-control">
                 </div>
             </div>
-
-            <div class="button">
-                <input type="submit" value="Create"> <i class="fa-solid fa-plus"></i>
+            <div class="inputs d-flex justify-content-center align-items-center gap-4">
+                <div class="mb-1">
+                    <label class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" placeholder="+962" length="10">
+                </div>
+                <div class="mb-1">
+                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
             </div>
-            <div class="button">
-                <input type="submit" value="Sign up with Google"> <i class="fa-brands fa-google"></i>
+            <div class="inputs d-flex justify-content-center align-items-center gap-4">
+                <div class="mb-1">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-1">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control">
+                </div>
+            </div>
+            <div class="mb-1 d-flex justify-content-center align-items-center flex-column">
+                <button type="submit" class="Button btn-primary">Sign Up</button>
+                <a class="Button btnsForm btn-primary">Sign Up with Google</a>
+                <a asp-action="Login" asp-controller="home" class="Button btnsForm btn-primary">Login</a>
+                <a asp-action="index" asp-controller="home">back home</a>
             </div>
         </form>
     </div>
+
 </div>
